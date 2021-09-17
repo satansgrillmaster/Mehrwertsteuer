@@ -91,9 +91,11 @@ int main() {
         //create header
         printf("Rechnung\n");
         printSpaces(sum);
+
         printf("\n");
         printf("%s%*s%*s%*s\n", "Artikel", 30 - sizeof("Artikel"), "Brutto",
                30 - sizeof("Brutto"), "Rabatt", 30 - sizeof("Rabatt"), "Betrag");
+
         printSpaces(sum);
         printf("\n");
 
@@ -117,12 +119,14 @@ int main() {
         // calculate and print vat amout
         vatAmout = (totalPrice / 100) * VAT;
         printf("Mehrwertsteuer%*.1f%%%*.2f\n", 38, VAT, invoiceDistance, vatAmout);
+
         printSpaces(sum);
         printf("\n");
 
         // calculate and print invoice amout
         invoiceAmout = totalPrice + vatAmout;
         printf("Rechnungsbetrag%*.2f\n\n\n", 60, invoiceAmout);
+
         printSpaces(sum);
         printf("\n\n");
 
