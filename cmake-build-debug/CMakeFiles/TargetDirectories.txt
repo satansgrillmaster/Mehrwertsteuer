@@ -1,0 +1,3 @@
+C:/Users/maett/CLionProjects/Mehrwertsteuer/cmake-build-debug/CMakeFiles/Mehrwertsteuer.dir
+C:/Users/maett/CLionProjects/Mehrwertsteuer/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/maett/CLionProjects/Mehrwertsteuer/cmake-build-debug/CMakeFiles/rebuild_cache.dir

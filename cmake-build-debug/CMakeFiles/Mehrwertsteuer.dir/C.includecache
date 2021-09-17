@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/maett/CLionProjects/Mehrwertsteuer/main.c
+stdio.h
+-
+string.h
+C:/Users/maett/CLionProjects/Mehrwertsteuer/string.h
+
