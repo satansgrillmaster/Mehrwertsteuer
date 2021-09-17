@@ -25,11 +25,7 @@ void get_article(char type[], float price, float discount){
     char distancePrice = 4;
     char distanceDiscount = 12;
     char distanceDiscountsum = 9;
-
     float discountsum = (price / 100 ) * discount;
-
-
-
 
     printf("%s%*.2f%*.1f%%%*.2f%*.2f\n", type,30 - strnlen(type,40) - 1,
            price, 30-sizeof(price) - distancePrice, discount, distanceDiscountsum, discountsum,
