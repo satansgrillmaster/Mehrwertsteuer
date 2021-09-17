@@ -43,7 +43,7 @@ int main() {
     //Variable declaration
 
     // sum for parting line length
-    char sum = (30 - sizeof("Artikel")) + (30 - sizeof("Brutto")) + (30 - sizeof("Rabatt")) + sizeof("Betrag");
+    char sum = (30 - sizeof("Artikel")) + (30 - sizeof("Brutto")) + (30 - sizeof("Rabatt")) + sizeof("Betrag") - 1;
 
     //Article prices and discount
     float hardwarePrice = 100;
@@ -91,6 +91,8 @@ int main() {
         scanf("%f", &servicesDiscount);
         while (getchar() != '\n');
         */
+
+        //create header
         printf("Rechnung\n");
         printSpaces(sum);
         printf("\n");
@@ -100,9 +102,9 @@ int main() {
         printf("\n");
 
         //get and show article
-        get_article("Hardware", hardwarePrice,hardwareDiscount);
-        get_article("Software", softwarePrice,softwareDiscount);
-        get_article("Dienstleistungen", servicesPrice,servicesDiscount);
+        get_article("Hardware", hardwarePrice, hardwareDiscount);
+        get_article("Software", softwarePrice, softwareDiscount);
+        get_article("Dienstleistungen", servicesPrice, servicesDiscount);
 
         printSpaces(sum);
         printf("\n");
@@ -113,7 +115,7 @@ int main() {
         endPriceSer = get_end_price(servicesPrice, servicesDiscount);
         totalPrice = endPriceHard + endPriceSoft + endPriceSer;
 
-        printf("%s%*.2f", "summe", 75 - strnlen("Summe",40),totalPrice);
+        printf("%s%*.2f", "summe", 75 - strnlen("Summe",40), totalPrice);
         printf("\n");
 
         // calculate and print vat amout
@@ -128,6 +130,7 @@ int main() {
         printSpaces(sum);
         printf("\n\n");
 
+        //ask user for next invoice
         printf("Wollen sie noch eine Rechnung durchfueren ? y/n\n");
         scanf("%c", &nextStep);
         getchar();
