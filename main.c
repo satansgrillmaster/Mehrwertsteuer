@@ -5,8 +5,8 @@ const float VAT = 7.7f;
 
 // Funktion: um Trennlinien auszugen
 void printSpaces(int sum){
-    for(int i = 0;i<=sum;i++){
-        printf("%c",196);
+    for(int i = 0; i<=sum; i++){
+        printf("%c", 196);
     }
 }
 
@@ -35,9 +35,9 @@ void get_article(char type[],float price,float discount){
 
 
 
-    printf("%s%*.2f%*.1f%%%*.2f%*.2f\n",type,30 - strnlen(type,40) - distanceType,
-           price,30-sizeof(price) - distancePrice,discount,distanceDiscountsum,discountsum,
-           30 - sizeof(discount) - distanceDiscount,get_end_price(price,discount));
+    printf("%s%*.2f%*.1f%%%*.2f%*.2f\n", type,30 - strnlen(type,40) - distanceType,
+           price, 30-sizeof(price) - distancePrice, discount, distanceDiscountsum, discountsum,
+           30 - sizeof(discount) - distanceDiscount, get_end_price(price, discount));
 }
 
 
@@ -92,30 +92,30 @@ int main() {
         scanf("%f", &servicesDiscount);
         while (getchar() != '\n');
         */
-        char sum = (30-sizeof("Artikel")) + (30 - sizeof("Brutto")) + (30 - sizeof("Rabatt")) + sizeof("Betrag");
+        char sum = (30 - sizeof("Artikel")) + (30 - sizeof("Brutto")) + (30 - sizeof("Rabatt")) + sizeof("Betrag");
         printf("Rechnung\n");
         printSpaces(sum);
         printf("\n");
-        printf("%s%*s%*s%*s\n","Artikel",30 - sizeof("Artikel"),"Brutto",
-               30 - sizeof("Brutto"),"Rabatt", 30 - sizeof("Rabatt"),"Betrag");
+        printf("%s%*s%*s%*s\n", "Artikel", 30 - sizeof("Artikel"), "Brutto",
+               30 - sizeof("Brutto"), "Rabatt", 30 - sizeof("Rabatt"), "Betrag");
         printSpaces(sum);
         printf("\n");
 
         //get and show article
-        get_article("Hardware",hardwarePrice,hardwareDiscount);
-        get_article("Software",softwarePrice,softwareDiscount);
-        get_article("Dienstleistungen",servicesPrice,servicesDiscount);
+        get_article("Hardware", hardwarePrice,hardwareDiscount);
+        get_article("Software", softwarePrice,softwareDiscount);
+        get_article("Dienstleistungen", servicesPrice,servicesDiscount);
 
         printSpaces(sum);
         printf("\n");
 
         // calculate and print total price
-        endPriceHard = get_end_price(hardwarePrice,hardwareDiscount);
-        endPriceSoft = get_end_price(softwarePrice,servicesDiscount);
-        endPriceSer = get_end_price(servicesPrice,servicesDiscount);
+        endPriceHard = get_end_price(hardwarePrice, hardwareDiscount);
+        endPriceSoft = get_end_price(softwarePrice, servicesDiscount);
+        endPriceSer = get_end_price(servicesPrice, servicesDiscount);
         totalPrice = endPriceHard + endPriceSoft + endPriceSer;
 
-        printf("%s%*.2f","summe",76 - strnlen("Summe",40),totalPrice);
+        printf("%s%*.2f", "summe", 76 - strnlen("Summe",40),totalPrice);
         printf("\n");
 
         // calculate and print vat amout
@@ -131,7 +131,7 @@ int main() {
         printf("\n\n");
 
         printf("Wollen sie noch eine Rechnung durchfueren ? y/n\n");
-        scanf("%c",&nextStep);
+        scanf("%c", &nextStep);
         getchar();
 
 
