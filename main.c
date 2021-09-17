@@ -136,7 +136,6 @@ int main() {
         scanf("%c", &nextStep);
         getchar();
 
-
     } while (nextStep != 'n');
     return 0;
 }
