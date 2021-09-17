@@ -3,7 +3,7 @@
 
 const float VAT = 7.7f;
 
-// Funktion: um Trennlinien auszugeben
+// Funktion: um Trennlinien auszugeben *sum anzah Zeichen
 void printSpaces(int sum){
     for(int i = 0; i<=sum; i++){
         printf("%c", 196);
@@ -11,31 +11,27 @@ void printSpaces(int sum){
 }
 
 
-// Funktion: um den Nettopreis des Artikels zu ermitteln
+// Funktion: um den Nettopreis des Artikels zu ermitteln *price Artikelpreis *discount %Rabatt
 float get_end_price(float price, float discount){
     float endprice = price - (price / 100) * discount;
     return endprice;
 }
 
 
-//Funktion: Fügt einen "Datensatz" hinzu. *type artikelname *price Preis des Artikels *discount %Rabatt
+//Funktion: Fügt einen "Datensatz" hinzu. *type[] artikelname *price Preis des Artikels *discount %Rabatt
 void get_article(char type[], float price, float discount){
 
 
-    char distanceType = 1;
     char distancePrice = 4;
-    char distanceDiscount = 11;
+    char distanceDiscount = 12;
     char distanceDiscountsum = 9;
 
     float discountsum = (price / 100 ) * discount;
 
-    if(discountsum >= 10){
-        distanceDiscount = 11;
-    }
 
 
 
-    printf("%s%*.2f%*.1f%%%*.2f%*.2f\n", type,30 - strnlen(type,40) - distanceType,
+    printf("%s%*.2f%*.1f%%%*.2f%*.2f\n", type,30 - strnlen(type,40) - 1,
            price, 30-sizeof(price) - distancePrice, discount, distanceDiscountsum, discountsum,
            30 - sizeof(discount) - distanceDiscount, get_end_price(price, discount));
 }
@@ -50,13 +46,13 @@ int main() {
     char sum = (30 - sizeof("Artikel")) + (30 - sizeof("Brutto")) + (30 - sizeof("Rabatt")) + sizeof("Betrag");
 
     //Article prices and discount
-    float hardwarePrice = 1000;
+    float hardwarePrice = 100;
     float hardwareDiscount = 15.8f;
 
-    float softwarePrice = 9000;
+    float softwarePrice = 90000;
     float softwareDiscount = 0.8f;
 
-    float servicesPrice = 4000;
+    float servicesPrice = 400;
     float servicesDiscount = 0.8f;
 
     // end price the sum from all articles
@@ -68,7 +64,7 @@ int main() {
     // Invoiceprice and distance format
     float vatAmout = 0;
     float invoiceAmout = 0;
-    char invoiceDistance = 23;
+    char invoiceDistance = 22;
 
     char nextStep = 'n';
 
@@ -117,7 +113,7 @@ int main() {
         endPriceSer = get_end_price(servicesPrice, servicesDiscount);
         totalPrice = endPriceHard + endPriceSoft + endPriceSer;
 
-        printf("%s%*.2f", "summe", 76 - strnlen("Summe",40),totalPrice);
+        printf("%s%*.2f", "summe", 75 - strnlen("Summe",40),totalPrice);
         printf("\n");
 
         // calculate and print vat amout
@@ -128,7 +124,7 @@ int main() {
 
         // calculate and print invoice amout
         invoiceAmout = totalPrice + vatAmout;
-        printf("Rechnungsbetrag%*.2f\n\n", 61, invoiceAmout);
+        printf("Rechnungsbetrag%*.2f\n\n\n", 60, invoiceAmout);
         printSpaces(sum);
         printf("\n\n");
 
