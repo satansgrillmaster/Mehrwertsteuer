@@ -46,6 +46,9 @@ int main() {
 
     //Variable declaration
 
+    // sum for parting line length
+    char sum = (30 - sizeof("Artikel")) + (30 - sizeof("Brutto")) + (30 - sizeof("Rabatt")) + sizeof("Betrag");
+
     //Article prices and discount
     float hardwarePrice = 1000;
     float hardwareDiscount = 15.8f;
@@ -92,7 +95,6 @@ int main() {
         scanf("%f", &servicesDiscount);
         while (getchar() != '\n');
         */
-        char sum = (30 - sizeof("Artikel")) + (30 - sizeof("Brutto")) + (30 - sizeof("Rabatt")) + sizeof("Betrag");
         printf("Rechnung\n");
         printSpaces(sum);
         printf("\n");
