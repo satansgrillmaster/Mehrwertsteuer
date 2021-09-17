@@ -3,7 +3,7 @@
 
 const float VAT = 7.7f;
 
-// Funktion: um Trennlinien auszugen
+// Funktion: um Trennlinien auszugeben
 void printSpaces(int sum){
     for(int i = 0; i<=sum; i++){
         printf("%c", 196);
@@ -11,7 +11,7 @@ void printSpaces(int sum){
 }
 
 
-// Funktion: um den Nettopreis des artikels zu ermitteln
+// Funktion: um den Nettopreis des Artikels zu ermitteln
 float get_end_price(float price, float discount){
     float endprice = price - (price / 100) * discount;
     return endprice;
@@ -19,7 +19,7 @@ float get_end_price(float price, float discount){
 
 
 //Funktion: Fügt einen "Datensatz" hinzu. *type artikelname *price Preis des Artikels *discount %Rabatt
-void get_article(char type[],float price,float discount){
+void get_article(char type[], float price, float discount){
 
 
     char distanceType = 1;
